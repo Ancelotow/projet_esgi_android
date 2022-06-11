@@ -3,11 +3,9 @@ package com.esgi.yfitops.models.services
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.RequestFuture
 import com.android.volley.toolbox.Volley
 import com.esgi.yfitops.models.entities.Track
 import org.json.JSONException
-import org.json.JSONObject
 import java.util.concurrent.CompletableFuture
 
 
