@@ -1,6 +1,7 @@
 package com.esgi.yfitops
 
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentContainerView
 import androidx.navigation.fragment.NavHostFragment
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val actionBar: ActionBar? = supportActionBar
+        actionBar?.hide()
         navBar = findViewById(R.id.nav_bar)
         hostView = findViewById(R.id.host_view)
         val navHost = supportFragmentManager.findFragmentById(R.id.host_view) as NavHostFragment
