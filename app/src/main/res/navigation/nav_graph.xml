@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bar_navigation"
+    app:startDestination="@id/tab_rank">
+
+    <fragment
+        android:id="@+id/tab_rank"
+        android:name="com.esgi.yfitops.RankFragment"
+        tools:layout="@layout/fragment_rank" />
+
+    <fragment
+        android:id="@+id/tab_search"
+        android:name="com.esgi.yfitops.RankFragment"
+        tools:layout="@layout/fragment_rank"/>
+
+    <fragment
+        android:id="@+id/tab_favorites"
+        android:name="com.esgi.yfitops.RankFragment"
+        tools:layout="@layout/fragment_rank"/>
+
+</navigation>

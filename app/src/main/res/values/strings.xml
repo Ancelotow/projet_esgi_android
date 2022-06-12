@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">yfitops</string>
+
+    <string name="menu_rank">Classements</string>
+    <string name="menu_search">Recherche</string>
+    <string name="menu_favorites">Favoris</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

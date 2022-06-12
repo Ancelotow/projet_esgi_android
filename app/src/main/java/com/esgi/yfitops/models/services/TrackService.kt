@@ -1,6 +1,6 @@
 package com.esgi.yfitops.models.services
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture
 
 class TrackService : ApiService() {
 
-    fun getRanksTrack(context: AppCompatActivity): CompletableFuture<MutableList<Track>> {
+    fun getRanksTrack(context: Context): CompletableFuture<MutableList<Track>> {
         val queue = Volley.newRequestQueue(context)
         val listTracks = mutableListOf<Track>()
         val completableFuture = CompletableFuture<MutableList<Track>>()
