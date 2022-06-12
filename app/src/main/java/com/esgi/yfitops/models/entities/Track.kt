@@ -9,16 +9,22 @@ class Track(trackJson: JSONObject) {
     var title: String = "";
     var artist: String = "";
     var thumb: String =
-        "https://play-lh.googleusercontent.com/G8GiOrGYRfF58WhvqTxm1vbrV5cLQd-Yw7Mls_vjTjr_z3sSDxiRUuPER7HOPZj4VQY=w240-h480";
+        "https://us.123rf.com/450wm/soloviivka/soloviivka1606/soloviivka160600001/59688426-music-note-vecteur-icône-blanc-sur-fond-noir.jpg";
 
     init {
         this.id = trackJson.getInt("idTrack")
         this.idAlbum = trackJson.getInt("idAlbum")
         this.idArtist = trackJson.getInt("idArtist")
         this.title = trackJson.getString("strTrack")
-        this.title = trackJson.getString("strTrack")
         this.artist = trackJson.getString("strArtist")
         this.thumb = trackJson.getString("strTrackThumb")
+        if(this.thumb == "null" || this.thumb == "") {
+            this.thumb = "https://us.123rf.com/450wm/soloviivka/soloviivka1606/soloviivka160600001/59688426-music-note-vecteur-icône-blanc-sur-fond-noir.jpg"
+        }
+    }
+
+    fun toRank(): Rank {
+        return Rank(id, title, artist, thumb)
     }
 
 }

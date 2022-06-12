@@ -15,4 +15,13 @@
         <!-- Customize your theme here. -->
 
     </style>
+
+    <style name="Theme.Yfitops.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Yfitops.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Yfitops.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
