@@ -9,7 +9,7 @@
         android:id="@+id/host_view"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/nav_bar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,6 +25,9 @@
         app:itemIconTint="@drawable/bottom_nav_bar_color"
         app:itemTextColor="@drawable/bottom_nav_bar_color"
         app:menu="@menu/bottom_nav_bar"
+        app:layout_constraintTop_toBottomOf="@id/host_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
