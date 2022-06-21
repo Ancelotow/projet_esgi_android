@@ -1,20 +1,17 @@
 package com.esgi.yfitops
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.esgi.yfitops.models.entities.Rank
 import com.esgi.yfitops.models.services.AlbumService
 import com.esgi.yfitops.models.services.TrackService
-import com.google.android.material.tabs.TabItem
 import com.google.android.material.tabs.TabLayout
 import com.squareup.picasso.Picasso
 
@@ -88,7 +85,7 @@ class RankFragment : Fragment() {
 
 }
 
-class ListAdapter(val items: List<Rank>) : RecyclerView.Adapter<TrackViewHolder>() {
+class ListAdapter(val items: MutableList<Rank>) : RecyclerView.Adapter<TrackViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrackViewHolder {
         return TrackViewHolder(

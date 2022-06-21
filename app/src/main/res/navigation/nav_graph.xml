@@ -20,4 +20,5 @@
         android:name="com.esgi.yfitops.RankFragment"
         tools:layout="@layout/fragment_rank"/>
 
+
 </navigation>

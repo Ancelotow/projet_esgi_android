@@ -14,4 +14,6 @@ class Rank(id: Int, title: String, subTitle: String, thumb: String) {
         this.thumb = thumb
     }
 
+
+
 }
