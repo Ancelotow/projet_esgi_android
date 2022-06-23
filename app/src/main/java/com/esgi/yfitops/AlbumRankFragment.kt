@@ -1,6 +1,7 @@
 package com.esgi.yfitops
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +11,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.esgi.yfitops.models.entities.Album
-import com.esgi.yfitops.models.services.AlbumService
+import com.esgi.yfitops.models.entities.Album.Service.getAlbumsRanks
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class AlbumRankFragment : Fragment() {
@@ -19,6 +24,7 @@ class AlbumRankFragment : Fragment() {
     var listAlbums = mutableListOf<Album>()
     private lateinit var recyclerView: RecyclerView
 
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,10 +32,10 @@ class AlbumRankFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_album_rank, container, false)
         this.recyclerView = view.findViewById(R.id.recyclerview)
         recyclerView.adapter = ListAdapterAlbum(listAlbums)
-        recyclerView.layoutManager = GridLayoutManager(view.context, 1)
-        context?.let { it1 ->
-            AlbumService().getRanksAlbum(it1).thenAccept { response ->
-                listAlbums = response
+        recyclerView.layoutManager = GridLayoutManager(context, 1)
+        GlobalScope.launch(Dispatchers.Default) {
+            listAlbums = getAlbumsRanks() as MutableList<Album>
+            GlobalScope.launch(Dispatchers.Main) {
                 recyclerView.adapter = ListAdapterAlbum(listAlbums)
                 recyclerView.layoutManager = GridLayoutManager(context, 1)
             }

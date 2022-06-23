@@ -10,6 +10,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.esgi.yfitops.models.entities.Album
 import com.esgi.yfitops.models.entities.AlbumDet
 import com.esgi.yfitops.models.services.AlbumService
 
@@ -67,10 +68,10 @@ class ArtistActivity : AppCompatActivity() {
         clearListAl()
         this?.let {it ->
             listItemsAl.clear()
-            AlbumService().getAlbumId(it,147737).thenAccept { response ->
+            /*Album.getAlbumId(it,147737).thenAccept { response ->
                 listItemsAl = response.map { e -> e.toAlbumDet() }.toMutableList()
                 refreshRecyclerViewAl()
-            }
+            }*/
         }
     }
 
@@ -87,10 +88,10 @@ class ArtistActivity : AppCompatActivity() {
     private fun initTrackId() {
         clearListT()
         this?.let { it1 ->
-            AlbumService().getAlbumId(it1,147737).thenAccept { response ->
+            /*AlbumService().getAlbumId(it1,147737).thenAccept { response ->
                 listItemsTitle = response.map { e -> e.toAlbumDet() }.toMutableList()
                 refreshRecyclerViewT()
-            }
+            }*/
         }
     }
 

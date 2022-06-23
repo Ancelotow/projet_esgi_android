@@ -9,7 +9,13 @@
     <!-- Fragment : Ranks -->
     <string name="rank_tracks">Titres</string>
     <string name="rank_albums">Albums</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Fragment : Search -->
+    <string name="search_title">Rechercher</string>
+    <string name="search_artists">Artistes</string>
+    <string name="search_albums">Albums</string>
+    <string name="search_hint">Recherche…</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

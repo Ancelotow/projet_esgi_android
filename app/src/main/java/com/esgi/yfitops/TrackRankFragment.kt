@@ -9,26 +9,30 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.esgi.yfitops.models.entities.Album
 import com.esgi.yfitops.models.entities.Track
 import com.esgi.yfitops.models.services.TrackService
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class TrackRankFragment : Fragment() {
 
     var listTracks = mutableListOf<Track>()
     private lateinit var recyclerView: RecyclerView
 
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_track_rank, container, false)
         this.recyclerView = view.findViewById(R.id.recyclerview)
-        recyclerView.adapter = ListAdapterTrack(listTracks)
-        recyclerView.layoutManager = GridLayoutManager(view.context, 1)
-        context?.let { it1 ->
-            TrackService().getRanksTrack(it1).thenAccept { response ->
-                listTracks = response
+        GlobalScope.launch(Dispatchers.Default) {
+            listTracks = Track.getTrackRank() as MutableList<Track>
+            GlobalScope.launch(Dispatchers.Main) {
                 recyclerView.adapter = ListAdapterTrack(listTracks)
                 recyclerView.layoutManager = GridLayoutManager(context, 1)
             }

@@ -1,6 +1,9 @@
 package com.esgi.yfitops.models.entities
 
+import com.esgi.yfitops.models.services.AlbumService
+import com.esgi.yfitops.models.services.TrackService
 import org.json.JSONObject
+import retrofit2.await
 
 class Artist (trackJson: JSONObject){
 
@@ -21,4 +24,5 @@ class Artist (trackJson: JSONObject){
             this.thumb = "https://us.123rf.com/450wm/soloviivka/soloviivka1606/soloviivka160600001/59688426-music-note-vecteur-icône-blanc-sur-fond-noir.jpg"
         }
     }
+
 }

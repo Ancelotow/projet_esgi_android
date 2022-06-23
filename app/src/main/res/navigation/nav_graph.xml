@@ -12,8 +12,8 @@
 
     <fragment
         android:id="@+id/tab_search"
-        android:name="com.esgi.yfitops.RankFragment"
-        tools:layout="@layout/fragment_rank"/>
+        android:name="com.esgi.yfitops.SearchFragment"
+        tools:layout="@layout/fragment_search"/>
 
     <fragment
         android:id="@+id/tab_favorites"
