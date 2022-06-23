@@ -8,11 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.esgi.yfitops.models.entities.Album
 import com.esgi.yfitops.models.entities.Track
+import com.esgi.yfitops.models.repositories.*
 import com.esgi.yfitops.models.services.TrackService
+import com.esgi.yfitops.viewModel.AlbumViewModel
+import com.esgi.yfitops.viewModel.TrackViewModel
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -22,32 +26,33 @@ import kotlinx.coroutines.launch
 
 class TrackRankFragment : Fragment() {
 
-    var listTracks = mutableListOf<Track>()
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var shimmerLayout: ShimmerFrameLayout
+    val viewModel: TrackViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_track_rank, container, false)
-        this.recyclerView = view.findViewById(R.id.recyclerview)
-        shimmerLayout = view.findViewById(R.id.shimmer_layout)
-        initRecyclerView()
-        return view
+        return inflater.inflate(R.layout.fragment_track_rank, container, false)
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
-    fun initRecyclerView() {
-        shimmerLayout.visibility = View.VISIBLE // Met en visible le miroitement
-        shimmerLayout.startShimmer() // Démarre le shimmer (l'effet de miroitement)
-        GlobalScope.launch(Dispatchers.Default) {
-            listTracks = Track.getTrackRank() as MutableList<Track>
-            GlobalScope.launch(Dispatchers.Main) {
-                recyclerView.adapter = ListAdapterTrack(listTracks)
-                recyclerView.layoutManager = GridLayoutManager(context, 1)
-                shimmerLayout.stopShimmer() // arrête le shimmer (l'effet de miroitement)
-                shimmerLayout.visibility = View.GONE // cache la liste de shimmer
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val shimmer_layout = view.findViewById<ShimmerFrameLayout>(R.id.shimmer_layout)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
+        shimmer_layout.visibility = View.VISIBLE
+        viewModel.listTrack.observe(viewLifecycleOwner) {
+            when (it) {
+                is TrackStateError -> {
+                    shimmer_layout.visibility = View.GONE
+                }
+                TrackStateLoading -> {
+                    shimmer_layout.visibility = View.VISIBLE
+                }
+                is TrackStateSuccess -> {
+                    shimmer_layout.visibility = View.GONE
+                    recyclerView.adapter = ListAdapterTrack(it.tracks as MutableList<Track>)
+                    recyclerView.layoutManager = GridLayoutManager(context, 1)
+                }
             }
         }
     }

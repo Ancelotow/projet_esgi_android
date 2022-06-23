@@ -1,56 +1,53 @@
 package com.esgi.yfitops
 
-import android.opengl.Visibility
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.esgi.yfitops.models.entities.Album
-import com.esgi.yfitops.models.entities.Album.Service.getAlbumsRanks
+import com.esgi.yfitops.models.repositories.AlbumStateError
+import com.esgi.yfitops.models.repositories.AlbumStateLoading
+import com.esgi.yfitops.models.repositories.AlbumStateSuccess
+import com.esgi.yfitops.viewModel.AlbumViewModel
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 
 class AlbumRankFragment : Fragment() {
 
-    var listAlbums = mutableListOf<Album>()
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var shimmerLayout: ShimmerFrameLayout
+    val viewModel: AlbumViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_album_rank, container, false)
-        shimmerLayout = view.findViewById(R.id.shimmer_layout)
-        this.recyclerView = view.findViewById(R.id.recyclerview)
-        recyclerView.adapter = ListAdapterAlbum(listAlbums)
-        recyclerView.layoutManager = GridLayoutManager(context, 1)
-        initRecyclerView()
-        return view
+        return inflater.inflate(R.layout.fragment_album_rank, container, false)
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
-    fun initRecyclerView() {
-        shimmerLayout.visibility = View.VISIBLE // Met en visible le miroitement
-        shimmerLayout.startShimmer() // Démarre le shimmer (l'effet de miroitement)
-        GlobalScope.launch(Dispatchers.Default) {
-            listAlbums = getAlbumsRanks() as MutableList<Album>
-            GlobalScope.launch(Dispatchers.Main) {
-                recyclerView.adapter = ListAdapterAlbum(listAlbums)
-                recyclerView.layoutManager = GridLayoutManager(context, 1)
-                shimmerLayout.stopShimmer() // arrête le shimmer (l'effet de miroitement)
-                shimmerLayout.visibility = View.GONE // cache la liste de shimmer
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val shimmer_layout = view.findViewById<ShimmerFrameLayout>(R.id.shimmer_layout)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
+        shimmer_layout.visibility = View.VISIBLE
+        viewModel.listAlbums.observe(viewLifecycleOwner) {
+            when (it) {
+                is AlbumStateError -> {
+                    shimmer_layout.visibility = View.GONE
+                }
+                AlbumStateLoading -> {
+                    shimmer_layout.visibility = View.VISIBLE
+                }
+                is AlbumStateSuccess -> {
+                    shimmer_layout.visibility = View.GONE
+                    recyclerView.adapter = ListAdapterAlbum(it.albums as MutableList<Album>)
+                    recyclerView.layoutManager = GridLayoutManager(context, 1)
+                }
             }
         }
     }

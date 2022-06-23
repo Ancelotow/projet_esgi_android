@@ -22,9 +22,17 @@
         <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_rank.xml" value="0.22" />
         <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_titre.xml" value="0.22" />
         <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/menu/bottom_nav_bar.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/drawable/bottom_nav_bar_color.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/fleche_droite.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_favorites.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_rank.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/placeholder_album.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_detail_artist.xml" value="0.21388888888888888" />
         <entry key="app/src/main/res/layout/activity_favoris.xml" value="0.17407407407407408" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2737752161383285" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.1278962001853568" />
         <entry key="app/src/main/res/layout/fragment_album_rank.xml" value="0.12685185185185185" />
         <entry key="app/src/main/res/layout/fragment_rank.xml" value="0.12685185185185185" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.22856193676329492" />
