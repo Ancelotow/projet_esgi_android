@@ -20,8 +20,8 @@ class RankFragment : Fragment() {
             override fun onTabSelected(tab : TabLayout.Tab) {
 
                 when (tab.position) {
-                    0 -> changeFragment(TrackRankFragment.newInstance())
-                    1 -> changeFragment(AlbumRankFragment.newInstance())
+                    0 -> changeFragment(TrackRankFragment())
+                    1 -> changeFragment(AlbumRankFragment())
                 }
             }
             override fun onTabUnselected(p0: TabLayout.Tab?) {

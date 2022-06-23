@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.esgi.yfitops.models.entities.Album
 import com.esgi.yfitops.models.entities.Track
 import com.esgi.yfitops.models.services.TrackService
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -22,28 +23,33 @@ class TrackRankFragment : Fragment() {
 
     var listTracks = mutableListOf<Track>()
     private lateinit var recyclerView: RecyclerView
+    private lateinit var shimmerLayout: ShimmerFrameLayout
 
-    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_track_rank, container, false)
         this.recyclerView = view.findViewById(R.id.recyclerview)
+        shimmerLayout = view.findViewById(R.id.shimmer_layout)
+        initRecyclerView()
+        return view
+    }
+
+    @OptIn(DelicateCoroutinesApi::class)
+    fun initRecyclerView() {
+        shimmerLayout.visibility = View.VISIBLE // Met en visible le miroitement
+        shimmerLayout.startShimmer() // Démarre le shimmer (l'effet de miroitement)
         GlobalScope.launch(Dispatchers.Default) {
             listTracks = Track.getTrackRank() as MutableList<Track>
             GlobalScope.launch(Dispatchers.Main) {
                 recyclerView.adapter = ListAdapterTrack(listTracks)
                 recyclerView.layoutManager = GridLayoutManager(context, 1)
+                shimmerLayout.stopShimmer() // arrête le shimmer (l'effet de miroitement)
+                shimmerLayout.visibility = View.GONE // cache la liste de shimmer
             }
         }
-        return view
     }
-
-    companion object {
-        fun newInstance(): TrackRankFragment = TrackRankFragment()
-    }
-
 
 }
 

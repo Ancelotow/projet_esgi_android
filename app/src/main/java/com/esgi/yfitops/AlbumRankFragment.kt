@@ -1,5 +1,6 @@
 package com.esgi.yfitops
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.esgi.yfitops.models.entities.Album
 import com.esgi.yfitops.models.entities.Album.Service.getAlbumsRanks
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -23,28 +25,34 @@ class AlbumRankFragment : Fragment() {
 
     var listAlbums = mutableListOf<Album>()
     private lateinit var recyclerView: RecyclerView
+    private lateinit var shimmerLayout: ShimmerFrameLayout
 
-    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_album_rank, container, false)
+        shimmerLayout = view.findViewById(R.id.shimmer_layout)
         this.recyclerView = view.findViewById(R.id.recyclerview)
         recyclerView.adapter = ListAdapterAlbum(listAlbums)
         recyclerView.layoutManager = GridLayoutManager(context, 1)
+        initRecyclerView()
+        return view
+    }
+
+    @OptIn(DelicateCoroutinesApi::class)
+    fun initRecyclerView() {
+        shimmerLayout.visibility = View.VISIBLE // Met en visible le miroitement
+        shimmerLayout.startShimmer() // Démarre le shimmer (l'effet de miroitement)
         GlobalScope.launch(Dispatchers.Default) {
             listAlbums = getAlbumsRanks() as MutableList<Album>
             GlobalScope.launch(Dispatchers.Main) {
                 recyclerView.adapter = ListAdapterAlbum(listAlbums)
                 recyclerView.layoutManager = GridLayoutManager(context, 1)
+                shimmerLayout.stopShimmer() // arrête le shimmer (l'effet de miroitement)
+                shimmerLayout.visibility = View.GONE // cache la liste de shimmer
             }
         }
-        return view
-    }
-
-    companion object {
-        fun newInstance(): AlbumRankFragment = AlbumRankFragment()
     }
 
 }
