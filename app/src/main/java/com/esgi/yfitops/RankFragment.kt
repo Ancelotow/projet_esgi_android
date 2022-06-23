@@ -16,6 +16,7 @@ class RankFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_rank, container, false)
         val tabs = view.findViewById<TabLayout>(R.id.tabs)
+        changeFragment(TrackRankFragment())
         tabs.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab : TabLayout.Tab) {
 
