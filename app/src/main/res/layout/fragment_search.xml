@@ -37,25 +37,36 @@
             app:layout_constraintLeft_toLeftOf="@id/guide_start"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--<EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="@string/search_hint"
-            android:inputType="text"
-            android:textSize="20sp"
-            app:layout_constraintLeft_toLeftOf="@id/guide_start"
-            app:layout_constraintRight_toRightOf="@id/guide_end"
-            app:layout_constraintTop_toBottomOf="@id/title" />-->
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            app:startIconDrawable="@drawable/ic_search"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            app:boxBackgroundColor="#D5D4D4"
+            app:boxCornerRadiusBottomEnd="5dp"
+            app:boxCornerRadiusBottomStart="5dp"
+            app:boxCornerRadiusTopEnd="5dp"
+            app:boxCornerRadiusTopStart="5dp"
+            app:boxStrokeColor="#D5D4D4"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:endIconMode="clear_text"
+            app:hintEnabled="false"
+            app:expandedHintEnabled="false"
             app:layout_constraintLeft_toLeftOf="@id/guide_start"
             app:layout_constraintRight_toRightOf="@id/guide_end"
-            app:layout_constraintTop_toBottomOf="@id/title">
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:startIconDrawable="@drawable/ic_search">
+
+            <EditText
+                android:id="@+id/search_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/search_hint"
+                android:importantForAutofill="no"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:inputType="text" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
