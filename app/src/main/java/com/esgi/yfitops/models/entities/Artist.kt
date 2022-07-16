@@ -1,28 +1,70 @@
 package com.esgi.yfitops.models.entities
 
-import com.esgi.yfitops.models.services.AlbumService
-import com.esgi.yfitops.models.services.TrackService
-import org.json.JSONObject
+import com.esgi.yfitops.models.services.ApiConnection
+import com.esgi.yfitops.models.services.ApiService
+import com.google.gson.annotations.SerializedName
 import retrofit2.await
 
-class Artist (trackJson: JSONObject){
+class Artist(
 
-    var idArtist: Int = 0;
-    var artist: String = "";
-    var strStyle: String = ""
-    var biography: String=""
-    var thumb: String =
-        "https://us.123rf.com/450wm/soloviivka/soloviivka1606/soloviivka160600001/59688426-music-note-vecteur-icône-blanc-sur-fond-noir.jpg";
+    @SerializedName("idArtist")
+    var id: Int,
 
-    init {
-        this.idArtist = trackJson.getInt("idArtist")
-        this.artist = trackJson.getString("strArtist")
-        this.strStyle = trackJson.getString("strStyle")
-        this.biography = trackJson.getString("strBiographyEN")
-        this.thumb = trackJson.getString("strArtistThumb")
-        if(this.thumb == "null" || this.thumb == "") {
-            this.thumb = "https://us.123rf.com/450wm/soloviivka/soloviivka1606/soloviivka160600001/59688426-music-note-vecteur-icône-blanc-sur-fond-noir.jpg"
-        }
-    }
+    @SerializedName("strArtist")
+    var artist: String,
 
-}
+    @SerializedName("strStyle")
+    var style: String,
+
+    @SerializedName("strBiographyEN")
+    var biographyEN: String,
+
+    @SerializedName("strBiographyDE")
+    var biographyDE: String,
+
+    @SerializedName("strBiographyFR")
+    var biographyFR: String,
+
+    @SerializedName("strBiographyCN")
+    var biographyCN: String,
+
+    @SerializedName("strBiographyIT")
+    var biographyIT: String,
+
+    @SerializedName("strBiographyJP")
+    var biographyJP: String,
+
+    @SerializedName("strBiographyRU")
+    var biographyRU: String,
+
+    @SerializedName("strBiographyES")
+    var biographyES: String,
+
+    @SerializedName("strBiographyPT")
+    var biographyPT: String,
+
+    @SerializedName("strBiographySE")
+    var biographySE: String,
+
+    @SerializedName("strBiographyNL")
+    var biographyNL: String,
+
+    @SerializedName("strBiographyHU")
+    var biographyHU: String,
+
+    @SerializedName("strBiographyNO")
+    var biographyNO: String,
+
+    @SerializedName("strBiographyIL")
+    var biographyIL: String,
+
+    @SerializedName("strBiographyPL")
+    var biographyPL: String,
+
+    @SerializedName("strArtistThumb")
+    var thumb: String,
+
+    @SerializedName("strArtistLogo")
+    var logo: String
+
+)

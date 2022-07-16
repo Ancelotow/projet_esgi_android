@@ -10,9 +10,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.esgi.yfitops.models.entities.Album
 import com.esgi.yfitops.models.entities.AlbumDet
-import com.esgi.yfitops.models.services.AlbumService
 
 class ArtistActivity : AppCompatActivity() {
 

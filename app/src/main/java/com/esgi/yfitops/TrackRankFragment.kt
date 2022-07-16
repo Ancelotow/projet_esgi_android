@@ -1,7 +1,6 @@
 package com.esgi.yfitops
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,22 +11,15 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.esgi.yfitops.models.entities.Album
 import com.esgi.yfitops.models.entities.Track
 import com.esgi.yfitops.models.repositories.*
-import com.esgi.yfitops.models.services.TrackService
-import com.esgi.yfitops.viewModel.AlbumViewModel
 import com.esgi.yfitops.viewModel.TrackViewModel
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class TrackRankFragment : Fragment() {
 
-    val viewModel: TrackViewModel by viewModels()
+    private val viewModel: TrackViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

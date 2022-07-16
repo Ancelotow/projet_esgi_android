@@ -1,7 +1,7 @@
 package com.esgi.yfitops.models.entities
 
 import com.esgi.yfitops.models.services.ApiConnection
-import com.esgi.yfitops.models.services.TrackService
+import com.esgi.yfitops.models.services.ApiService
 import com.google.gson.annotations.SerializedName
 import org.json.JSONObject
 import retrofit2.await
@@ -43,7 +43,7 @@ class Track(trackJson: JSONObject) {
 
         suspend fun getTrackRank(): List<Track> {
             val rankTracks =
-                ApiConnection.connection().create(TrackService::class.java).listTracksRank().await()
+                ApiConnection.connection().create(ApiService::class.java).listTracksRank().await()
             return rankTracks.listLoved
         }
 

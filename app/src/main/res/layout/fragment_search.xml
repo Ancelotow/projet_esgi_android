@@ -38,6 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -71,6 +72,44 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <View
+            android:id="@+id/line_header"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/lightGrey"
+            app:layout_constraintTop_toBottomOf="@id/text_input_layout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/guide_start"
+            app:layout_constraintRight_toRightOf="@id/guide_end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_header" />
+
+        <include
+            android:id="@+id/layout_error"
+            layout="@layout/layout_error"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/guide_start"
+            app:layout_constraintRight_toRightOf="@id/guide_end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_header" />
+
+        <ProgressBar
+            android:id="@+id/loader_list"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:layout_constraintLeft_toLeftOf="@id/guide_start"
+            app:layout_constraintRight_toRightOf="@id/guide_end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_header"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
