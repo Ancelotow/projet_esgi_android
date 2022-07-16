@@ -5,13 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.esgi.yfitops.models.entities.Album
+import com.esgi.yfitops.models.entities.Artist
+import com.esgi.yfitops.models.enums.ESearchType
 import com.esgi.yfitops.models.repositories.*
 import com.esgi.yfitops.viewModel.SearchViewModel
-import com.google.android.material.progressindicator.CircularProgressIndicator
+import com.squareup.picasso.Picasso
 
 class SearchFragment : Fragment() {
 
@@ -31,24 +37,95 @@ class SearchFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
         loaderList.visibility = View.VISIBLE
         recyclerView.visibility = View.GONE
-        viewModel.listArtist.observe(viewLifecycleOwner) {
+        viewModel.search.observe(viewLifecycleOwner) {
             when (it) {
-                is ArtistStateError -> {
+                is SearchStateError -> {
                     loaderList.visibility = View.GONE
                     layoutError.visibility = View.VISIBLE
                 }
-                ArtistStateLoading -> {
+                SearchStateLoading -> {
                     loaderList.visibility = View.VISIBLE
                     recyclerView.visibility = View.GONE
                 }
-                is ArtistStateSuccess -> {
+                is SearchStateSuccess -> {
                     loaderList.visibility = View.GONE
                     recyclerView.visibility = View.VISIBLE
-                    /*recyclerView.adapter = ListAdapterTrack(it.tracks as MutableList<Track>)
-                    recyclerView.layoutManager = GridLayoutManager(context, 1)*/
+                    recyclerView.adapter = ListAdapterSearch(it.search.getListResult())
+                    recyclerView.layoutManager = GridLayoutManager(context, 1)
                 }
             }
         }
     }
 
+}
+
+class ListAdapterSearch(private val searchResult: MutableList<Any>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return if(viewType ==  ESearchType.ALBUM.ordinal) {
+            AlbumViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_album, parent, false)
+            )
+        } else if(viewType ==  ESearchType.ARTIST.ordinal) {
+            ArtistViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_artist, parent, false)
+            )
+        } else {
+            throw Error("Unknown type")
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val viewType = getItemViewType(position)
+        if(viewType ==  ESearchType.ALBUM.ordinal) {
+            val album = searchResult[position] as Album
+            (holder as AlbumViewHolder).setItem(album)
+        } else if(viewType ==  ESearchType.ARTIST.ordinal) {
+            val artist = searchResult[position] as Artist
+            (holder as ArtistViewHolder).setItem(artist)
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return searchResult.size
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if(searchResult[position] is Artist) {
+            ESearchType.ARTIST.ordinal
+        } else if(searchResult[position] is Album) {
+            ESearchType.ALBUM.ordinal
+        } else {
+            ESearchType.UNKNOWN.ordinal
+        }
+    }
+
+}
+
+class AlbumViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+
+    private val albumThumb = v.findViewById<ImageView>(R.id.picture_album_logo)
+    private val albumTitle = v.findViewById<TextView>(R.id.title_album)
+    private val albumArtist = v.findViewById<TextView>(R.id.desc_album)
+
+    fun setItem(item: Album) {
+        albumTitle.text = item.name
+        albumArtist.text = item.artist
+        Picasso.get().load(item.thumb).into(albumThumb)
+    }
+}
+
+class ArtistViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+
+    private val artistThumb = v.findViewById<ImageView>(R.id.artist_image)
+    private val artistName = v.findViewById<TextView>(R.id.artist_name)
+
+    fun setItem(item: Artist) {
+        artistName.text = item.artist
+        if(item.thumb.isNotEmpty()) {
+            Picasso.get().load(item.thumb).into(artistThumb)
+        }
+    }
 }

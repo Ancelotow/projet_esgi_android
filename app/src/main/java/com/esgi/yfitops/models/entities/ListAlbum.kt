@@ -2,9 +2,9 @@ package com.esgi.yfitops.models.entities
 
 import com.google.gson.annotations.SerializedName
 
-data class ListArtist(
+data class ListAlbum(
 
-    @SerializedName("artists")
-    var artists: List<Artist>
+    @SerializedName("album")
+    var album: List<Album>
 
 )

@@ -151,11 +151,11 @@ class ListAdapterT(val items: MutableList<AlbumDet>) : RecyclerView.Adapter<Trac
 class TrackViewHolderAl(v: View) : RecyclerView.ViewHolder(v) {
 
     private val itemTitle= v.findViewById<TextView>(R.id.title_album)
-    private val itemdesc= v.findViewById<TextView>(R.id.desc)
+    //private val itemdesc= v.findViewById<TextView>(R.id.desc)
 
     fun setItem(item: AlbumDet, rank: Int) {
         itemTitle.text = item.title
-        itemdesc.text = item.dateY
+        //.text = item.dateY
     }
 
 }

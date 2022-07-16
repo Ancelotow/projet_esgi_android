@@ -57,16 +57,16 @@ class AlbumRankFragment : Fragment() {
 
 }
 
-class ListAdapterAlbum(val albums: MutableList<Album>) : RecyclerView.Adapter<AlbumViewHolder>() {
+class ListAdapterAlbum(val albums: MutableList<Album>) : RecyclerView.Adapter<AlbumRankViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
-        return AlbumViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumRankViewHolder {
+        return AlbumRankViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_rank, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AlbumRankViewHolder, position: Int) {
         holder.setItem(albums[position], (position + 1))
     }
 
@@ -77,7 +77,7 @@ class ListAdapterAlbum(val albums: MutableList<Album>) : RecyclerView.Adapter<Al
 }
 
 
-class AlbumViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+class AlbumRankViewHolder(v: View) : RecyclerView.ViewHolder(v) {
 
     private val albumRank = v.findViewById<TextView>(R.id.rank)
     private val albumThumb = v.findViewById<ImageView>(R.id.thumb)
