@@ -3,52 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/drawable/bottom_nav_bar_color.xml" value="0.154" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/drawable/fleche_droite.xml" value="0.1" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/drawable/placeholder_album.xml" value="0.1315" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_album.xml" value="0.10461956521739131" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_artist.xml" value="0.11865942028985507" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_det_artist.xml" value="0.1272644927536232" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_detail_artist.xml" value="0.22" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_favoris.xml" value="0.1272644927536232" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_search.xml" value="0.1272644927536232" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/fragment_albm.xml" value="0.22" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/fragment_albums.xml" value="0.1" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/fragment_favoris.xml" value="0.11865942028985507" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/fragment_rank.xml" value="0.2" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/fragment_search.xml" value="0.11865942028985507" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_album.xml" value="0.22" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_rank.xml" value="0.22" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_titre.xml" value="0.22" />
-        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/menu/bottom_nav_bar.xml" value="0.20416666666666666" />
-        <entry key="app/src/main/res/drawable/bottom_nav_bar_color.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/fleche_droite.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_favorites.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_rank.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/placeholder_album.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_detail_artist.xml" value="0.21388888888888888" />
-        <entry key="app/src/main/res/layout/activity_favoris.xml" value="0.17407407407407408" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2737752161383285" />
-        <entry key="app/src/main/res/layout/activity_search.xml" value="0.1278962001853568" />
-        <entry key="app/src/main/res/layout/fragment_album_rank.xml" value="0.12685185185185185" />
-        <entry key="app/src/main/res/layout/fragment_rank.xml" value="0.12685185185185185" />
-        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.4344426740679824" />
-        <entry key="app/src/main/res/layout/fragment_track_rank.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_track_rank_fragement.xml" value="0.12685185185185185" />
-        <entry key="app/src/main/res/layout/item_album.xml" value="0.5781638540872713" />
-        <entry key="app/src/main/res/layout/item_artist.xml" value="0.3136344449134656" />
-        <entry key="app/src/main/res/layout/item_rank.xml" value="0.21614990234374998" />
-        <entry key="app/src/main/res/layout/item_rank_shimmer.xml" value="0.3468521118164063" />
-        <entry key="app/src/main/res/layout/item_titre.xml" value="0.31447868298860276" />
-        <entry key="app/src/main/res/layout/list_item_rank.xml" value="0.1" />
-        <entry key="app/src/main/res/menu/bottom_nav_bar.xml" value="0.22105102539062502" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/drawable/bottom_nav_bar_color.xml" value="0.3415" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/drawable/ic_search.xml" value="0.2705" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_artist.xml" value="0.24592391304347827" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_detail_artist.xml" value="0.24592391304347827" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_main.xml" value="0.55" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_main2.xml" value="0.3109375" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_ranking.xml" value="0.36302083333333335" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_album_rank.xml" value="0.346875" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_blank.xml" value="0.55" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_rank.xml" value="0.2554347826086957" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_track_rank.xml" value="0.346875" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_album.xml" value="0.24592391304347827" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_artist.xml" value="0.18541666666666667" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_rank.xml" value="0.24592391304347827" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_rank_shimmer.xml" value="0.18541666666666667" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_titre.xml" value="0.24592391304347827" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_track.xml" value="0.25" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/layout_error.xml" value="0.346875" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/menu/bottom_nav_bar.xml" value="0.5489583333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3212962962962963" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

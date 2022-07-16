@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,12 +39,14 @@ class TrackRankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val shimmer_layout = view.findViewById<ShimmerFrameLayout>(R.id.shimmer_layout)
+        val layoutError = view.findViewById<ConstraintLayout>(R.id.layout_error)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
         shimmer_layout.visibility = View.VISIBLE
         viewModel.listTrack.observe(viewLifecycleOwner) {
             when (it) {
                 is TrackStateError -> {
                     shimmer_layout.visibility = View.GONE
+                    layoutError.visibility = View.VISIBLE
                 }
                 TrackStateLoading -> {
                     shimmer_layout.visibility = View.VISIBLE
