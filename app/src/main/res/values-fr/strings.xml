@@ -24,6 +24,6 @@
     <string name="txt_error">Une erreur est survenue…\nVérifiez votre connexion internet</string>
     <string name="txt_lyrics">Paroles</string>
     <string name="txt_no_lyrics">Hum, nous ne connaissons pas les paroles de ce titre.</string>
-    <string name="txt_retry">Réssayer</string>
+    <string name="txt_retry">Réessayer</string>
 
 </resources>

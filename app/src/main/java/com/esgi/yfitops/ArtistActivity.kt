@@ -48,6 +48,10 @@ class ArtistActivity : AppCompatActivity() {
         val loader = findViewById<ProgressBar>(R.id.loader_info)
         val layoutError = findViewById<ConstraintLayout>(R.id.layout_error)
         val layoutArtist = findViewById<NestedScrollView>(R.id.layout_artist)
+
+        val btnErrorRetry = layoutError.findViewById<MaterialButton>(R.id.btn_error_retry)
+        btnErrorRetry.setOnClickListener { viewModel.getArtist(idArtist) }
+
         loader.visibility = View.VISIBLE
         layoutArtist.visibility = View.GONE
         layoutError.visibility = View.GONE

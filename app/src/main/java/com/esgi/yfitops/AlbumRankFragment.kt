@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
@@ -17,6 +18,7 @@ import com.esgi.yfitops.models.repositories.AlbumStateLoading
 import com.esgi.yfitops.models.repositories.AlbumStateSuccess
 import com.esgi.yfitops.viewModel.AlbumRankViewModel
 import com.facebook.shimmer.ShimmerFrameLayout
+import com.google.android.material.button.MaterialButton
 import com.squareup.picasso.Picasso
 
 
@@ -36,6 +38,10 @@ class AlbumRankFragment : Fragment() {
         val shimmerLayout = view.findViewById<ShimmerFrameLayout>(R.id.shimmer_layout)
         val layoutError = view.findViewById<ConstraintLayout>(R.id.layout_error)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
+
+        val btnErrorRetry = layoutError.findViewById<MaterialButton>(R.id.btn_error_retry)
+        btnErrorRetry.setOnClickListener { viewModel.getAlbumsRank() }
+
         shimmerLayout.visibility = View.VISIBLE
         layoutError.visibility = View.GONE
         viewModel.listAlbums.observe(viewLifecycleOwner) {

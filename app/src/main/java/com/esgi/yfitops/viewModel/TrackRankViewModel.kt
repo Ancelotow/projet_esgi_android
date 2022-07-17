@@ -14,10 +14,10 @@ class TrackRankViewModel : ViewModel() {
     val listTrack = _tracks
 
     init {
-        getAlbumsRank()
+        getTracksRank()
     }
 
-    fun getAlbumsRank() {
+    fun getTracksRank() {
         viewModelScope.launch {
             TrackRepository.fetchTracksRank().collect {
                 _tracks.value = it

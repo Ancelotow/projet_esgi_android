@@ -20,6 +20,7 @@ import com.esgi.yfitops.models.entities.Artist
 import com.esgi.yfitops.models.enums.ESearchType
 import com.esgi.yfitops.models.repositories.*
 import com.esgi.yfitops.viewModel.SearchViewModel
+import com.google.android.material.button.MaterialButton
 import com.squareup.picasso.Picasso
 
 
@@ -42,9 +43,14 @@ class SearchFragment : Fragment() {
             viewModel.getSearch(searchField.text.toString())
             return@setOnKeyListener false
         }
+
         val loaderList = view.findViewById<ProgressBar>(R.id.loader_list)
         val layoutError = view.findViewById<ConstraintLayout>(R.id.layout_error)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
+
+        val btnErrorRetry = layoutError.findViewById<MaterialButton>(R.id.btn_error_retry)
+        btnErrorRetry.setOnClickListener { viewModel.getSearch(searchField.text.toString()) }
+
         loaderList.visibility = View.VISIBLE
         recyclerView.visibility = View.GONE
         layoutError.visibility = View.GONE

@@ -43,6 +43,10 @@ class LyricsActivity : AppCompatActivity() {
         val loader = findViewById<ProgressBar>(R.id.loader_lyric)
         val layoutError = findViewById<ConstraintLayout>(R.id.layout_error)
         val layoutLyrics = findViewById<NestedScrollView>(R.id.layout_lyrics)
+
+        val btnErrorRetry = layoutError.findViewById<MaterialButton>(R.id.btn_error_retry)
+        btnErrorRetry.setOnClickListener { viewModel.getTrack(idTrack) }
+
         loader.visibility = View.VISIBLE
         layoutLyrics.visibility = View.GONE
         layoutError.visibility = View.GONE
