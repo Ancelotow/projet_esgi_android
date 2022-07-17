@@ -24,6 +24,33 @@
                 android:src="@drawable/placeholder_album"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_back"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/arrow_left"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white"
+                app:layout_constraintLeft_toLeftOf="@id/gl_start"
+                app:layout_constraintTop_toTopOf="@id/gl_top" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_favorite"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                app:cornerRadius="50dp"
+                app:backgroundTint="@color/white"
+                app:icon="@drawable/ic_loved"
+                app:iconGravity="textStart"
+                app:iconTint="@null"
+                app:iconSize="20dp"
+                app:iconPadding="0dp"
+                app:layout_constraintRight_toRightOf="@id/gl_end"
+                app:layout_constraintTop_toTopOf="@id/gl_top" />
+
             <TextView
                 android:id="@+id/artist_name"
                 android:layout_width="wrap_content"
@@ -118,6 +145,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_end="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="30dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_album"

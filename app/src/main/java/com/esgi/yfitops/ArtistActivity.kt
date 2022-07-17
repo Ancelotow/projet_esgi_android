@@ -2,9 +2,7 @@ package com.esgi.yfitops
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -16,14 +14,13 @@ import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.esgi.yfitops.models.entities.Album
-import com.esgi.yfitops.models.entities.Artist
 import com.esgi.yfitops.models.entities.ArtistDetail
-import com.esgi.yfitops.models.entities.Track
-import com.esgi.yfitops.models.enums.ESearchType
 import com.esgi.yfitops.models.repositories.*
 import com.esgi.yfitops.viewModel.ArtistViewModel
+import com.google.android.material.button.MaterialButton
 import com.squareup.picasso.Picasso
 import kotlin.properties.Delegates
+
 
 class ArtistActivity : AppCompatActivity() {
 
@@ -36,9 +33,16 @@ class ArtistActivity : AppCompatActivity() {
 
         val actionBar: ActionBar? = supportActionBar
         actionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
 
         idArtist = intent.getIntExtra("idArtist", 0)
         viewModel.getArtist(idArtist)
+
+        val btnBack = findViewById<MaterialButton>(R.id.btn_back)
+        btnBack.setOnClickListener { finish() }
 
         val loader = findViewById<ProgressBar>(R.id.loader_info)
         val layoutError = findViewById<ConstraintLayout>(R.id.layout_error)
