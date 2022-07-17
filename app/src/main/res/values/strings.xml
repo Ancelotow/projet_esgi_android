@@ -25,5 +25,7 @@
     <string name="txt_lyrics">Lyrics</string>
     <string name="txt_no_lyrics">Hmm, we don\'t know the lyrics to this track.</string>
     <string name="txt_retry">Retry</string>
+    <string name="txt_maintenance">This page is under maintenance.\nPlease come back later</string>
+
 
 </resources>
