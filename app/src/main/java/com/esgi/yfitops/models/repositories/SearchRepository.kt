@@ -1,6 +1,5 @@
 package com.esgi.yfitops.models.repositories
 
-import com.esgi.yfitops.models.entities.ListArtist
 import com.esgi.yfitops.models.entities.Search
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

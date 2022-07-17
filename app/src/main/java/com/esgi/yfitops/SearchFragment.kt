@@ -1,10 +1,12 @@
 package com.esgi.yfitops
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -22,6 +24,7 @@ import com.squareup.picasso.Picasso
 class SearchFragment : Fragment() {
 
     private val viewModel: SearchViewModel by viewModels()
+    private lateinit var searchField: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +35,11 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        searchField = view.findViewById(R.id.search_text)
+        searchField.setOnKeyListener { v, keyCode, event ->
+            viewModel.getSearch(searchField.text.toString())
+            return@setOnKeyListener false
+        }
         val loaderList = view.findViewById<ProgressBar>(R.id.loader_list)
         val layoutError = view.findViewById<ConstraintLayout>(R.id.layout_error)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
