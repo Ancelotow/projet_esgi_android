@@ -19,4 +19,13 @@ interface ApiService {
     @GET("searchalbum.php")
     fun searchAlbum(@Query("s") search: String): Call<ListAlbum>
 
+    @GET("artist.php")
+    fun getArtist(@Query("i") idArtist: Int): Call<ListArtist>
+
+    @GET("album.php")
+    fun getAlbumsFromArtist(@Query("i") idArtist: Int): Call<ListAlbum>
+
+    @GET("track-top10.php")
+    fun getTopTrackFromArtist(@Query("s") artistName: String): Call<ListTrack>
+
 }

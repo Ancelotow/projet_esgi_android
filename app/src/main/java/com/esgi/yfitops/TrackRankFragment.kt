@@ -13,13 +13,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.esgi.yfitops.models.entities.Track
 import com.esgi.yfitops.models.repositories.*
-import com.esgi.yfitops.viewModel.TrackViewModel
+import com.esgi.yfitops.viewModel.TrackRankViewModel
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.picasso.Picasso
 
 class TrackRankFragment : Fragment() {
 
-    private val viewModel: TrackViewModel by viewModels()
+    private val viewModel: TrackRankViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

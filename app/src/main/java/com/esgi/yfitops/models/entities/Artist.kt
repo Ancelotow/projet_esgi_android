@@ -65,6 +65,12 @@ class Artist(
     var thumb: String,
 
     @SerializedName("strArtistLogo")
-    var logo: String
+    var logo: String,
+
+    @SerializedName("strCountry")
+    var country: String,
+
+    @SerializedName("strGenre")
+    var genre: String
 
 )

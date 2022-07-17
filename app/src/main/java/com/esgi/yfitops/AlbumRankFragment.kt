@@ -15,14 +15,14 @@ import com.esgi.yfitops.models.entities.Album
 import com.esgi.yfitops.models.repositories.AlbumStateError
 import com.esgi.yfitops.models.repositories.AlbumStateLoading
 import com.esgi.yfitops.models.repositories.AlbumStateSuccess
-import com.esgi.yfitops.viewModel.AlbumViewModel
+import com.esgi.yfitops.viewModel.AlbumRankViewModel
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.picasso.Picasso
 
 
 class AlbumRankFragment : Fragment() {
 
-    val viewModel: AlbumViewModel by viewModels()
+    val viewModel: AlbumRankViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
