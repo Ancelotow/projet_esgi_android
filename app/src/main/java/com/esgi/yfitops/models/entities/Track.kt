@@ -35,6 +35,15 @@ class Track(
             return rankTracks.listLoved
         }
 
+        suspend fun getTrack(idTrack: Int): Track? {
+            val listTrack =
+                ApiConnection.connection().create(ApiService::class.java).getTrack(idTrack).await()
+            if(listTrack.track == null || listTrack.track!!.isEmpty()) {
+                return null;
+            }
+            return listTrack.track!!.first()
+        }
+
     }
 
 }

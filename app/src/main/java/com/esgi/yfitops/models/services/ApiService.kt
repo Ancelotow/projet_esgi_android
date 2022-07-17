@@ -28,4 +28,7 @@ interface ApiService {
     @GET("track-top10.php")
     fun getTopTrackFromArtist(@Query("s") artistName: String): Call<ListTrack>
 
+    @GET("track.php")
+    fun getTrack(@Query("h") idTrack: Int): Call<ListTrack>
+
 }
