@@ -148,7 +148,9 @@ class AlbumViewHolder(v: View) : RecyclerView.ViewHolder(v) {
     fun setItem(item: Album) {
         albumTitle.text = item.name
         albumArtist.text = item.artist
-        Picasso.get().load(item.thumb).into(albumThumb)
+        if(item.thumb != null && item.thumb!!.isNotEmpty()) {
+            Picasso.get().load(item.thumb).into(albumThumb)
+        }
     }
 }
 

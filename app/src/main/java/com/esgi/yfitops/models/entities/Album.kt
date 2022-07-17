@@ -21,7 +21,10 @@ class Album(
     var artist: String,
 
     @SerializedName("strAlbumThumb")
-    var thumb: String
+    var thumb: String?,
+
+    @SerializedName("intYearReleased")
+    var yearReleased: Int
 
 ) {
 
