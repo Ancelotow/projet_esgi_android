@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,136 +7,160 @@
     android:layout_height="match_parent"
     tools:context=".ArtistActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/layout_artist"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp" />
-
-        <ImageView
-            android:id="@+id/artist_image"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/artist_image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder_album"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/artist_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/artist_image"
+                app:layout_constraintLeft_toRightOf="@id/gl_start" />
+
+            <TextView
+                android:id="@+id/artist_from_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/grey"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toRightOf="@id/gl_start"
+                app:layout_constraintTop_toBottomOf="@id/artist_name" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/grey"
+                android:textSize="15sp"
+                app:layout_constraintLeft_toLeftOf="@id/gl_start"
+                app:layout_constraintRight_toRightOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/artist_image" />
+
+            <TextView
+                android:id="@+id/album"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:lines="1"
+                android:paddingBottom="10dp"
+                android:text="Albums (12)"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/gl_start"
+                app:layout_constraintRight_toRightOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/description" />
+
+            <TextView
+                android:id="@+id/top_track"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:lines="1"
+                android:text="@string/artist_top_track"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/gl_start"
+                app:layout_constraintRight_toRightOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_album" />
+
+            <View
+                android:id="@+id/line_album"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/lightGrey"
+                app:layout_constraintLeft_toLeftOf="@id/gl_start"
+                app:layout_constraintRight_toRightOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/album" />
+
+            <View
+                android:id="@+id/line_track"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/lightGrey"
+                app:layout_constraintLeft_toLeftOf="@id/gl_start"
+                app:layout_constraintRight_toRightOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/top_track" />
 
 
-        <TextView
-            android:id="@+id/artist_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
-            android:text="Kalid"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@id/gl_start"
-            app:layout_constraintBottom_toBottomOf="@id/artist_image" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
 
-        <TextView
-            android:id="@+id/from"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:text="Toronto,Canada - RB"
-            android:textColor="@color/grey"
-            android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@id/artist_name"
-            app:layout_constraintLeft_toRightOf="@id/gl_start" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Khalid Donnel Robinson (born February 11, 1998) is an American singer signed to Right Hand Music Group and RCA Records. He rose to fame after the release of his debut studio album, American Teen (2017). The album spawned the US top-20 singles..."
-            android:textColor="@color/grey"
-            android:textSize="15sp"
-            app:layout_constraintLeft_toLeftOf="@id/gl_start"
-            app:layout_constraintRight_toRightOf="@id/gl_end"
-            app:layout_constraintTop_toBottomOf="@id/artist_image" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_album"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="@+id/gl_start"
+                app:layout_constraintRight_toRightOf="@id/gl_end"
+                app:layout_constraintTop_toBottomOf="@id/line_album" />
 
-        <TextView
-            android:id="@+id/album"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
-            android:paddingBottom="10dp"
-            android:text="Albums (12)"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:lines="1"
-            android:textStyle="bold"
-            app:layout_constraintRight_toRightOf="@id/gl_end"
-            app:layout_constraintLeft_toLeftOf="@+id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/description" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_track"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="@+id/gl_start"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_track" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <View
-            android:id="@+id/line_album"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/lightGrey"
-            app:layout_constraintLeft_toLeftOf="@id/gl_start"
-            app:layout_constraintRight_toRightOf="@id/gl_end"
-            app:layout_constraintTop_toBottomOf="@id/album" />
+    </androidx.core.widget.NestedScrollView>
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_album"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            app:layout_constraintLeft_toLeftOf="@+id/gl_start"
-            app:layout_constraintRight_toRightOf="@id/gl_end"
-            app:layout_constraintTop_toBottomOf="@id/line_album" />
+    <include
+        android:id="@+id/layout_error"
+        layout="@layout/layout_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/top_track"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="@string/artist_top_track"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:lines="1"
-            app:layout_constraintLeft_toLeftOf="@+id/gl_start"
-            app:layout_constraintRight_toRightOf="@id/gl_end"
-            app:layout_constraintTop_toBottomOf="@id/recyclerview_album" />
+    <ProgressBar
+        android:id="@+id/loader_info"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-        <View
-            android:id="@+id/line_track"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/lightGrey"
-            app:layout_constraintLeft_toLeftOf="@id/gl_start"
-            app:layout_constraintRight_toRightOf="@id/gl_end"
-            app:layout_constraintTop_toBottomOf="@id/top_track" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_track"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:layout_constraintLeft_toLeftOf="@+id/gl_start"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line_track" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

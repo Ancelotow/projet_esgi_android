@@ -33,21 +33,23 @@ class AlbumRankFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val shimmer_layout = view.findViewById<ShimmerFrameLayout>(R.id.shimmer_layout)
+        val shimmerLayout = view.findViewById<ShimmerFrameLayout>(R.id.shimmer_layout)
         val layoutError = view.findViewById<ConstraintLayout>(R.id.layout_error)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
-        shimmer_layout.visibility = View.VISIBLE
+        shimmerLayout.visibility = View.VISIBLE
+        layoutError.visibility = View.GONE
         viewModel.listAlbums.observe(viewLifecycleOwner) {
             when (it) {
                 is AlbumStateError -> {
                     layoutError.visibility = View.VISIBLE
-                    shimmer_layout.visibility = View.GONE
+                    shimmerLayout.visibility = View.GONE
                 }
                 AlbumStateLoading -> {
-                    shimmer_layout.visibility = View.VISIBLE
+                    shimmerLayout.visibility = View.VISIBLE
+                    layoutError.visibility = View.GONE
                 }
                 is AlbumStateSuccess -> {
-                    shimmer_layout.visibility = View.GONE
+                    shimmerLayout.visibility = View.GONE
                     recyclerView.adapter = ListAdapterAlbum(it.albums as MutableList<Album>)
                     recyclerView.layoutManager = GridLayoutManager(context, 1)
                 }

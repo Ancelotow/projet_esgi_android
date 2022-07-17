@@ -30,21 +30,23 @@ class TrackRankFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val shimmer_layout = view.findViewById<ShimmerFrameLayout>(R.id.shimmer_layout)
+        val shimmerLayout = view.findViewById<ShimmerFrameLayout>(R.id.shimmer_layout)
         val layoutError = view.findViewById<ConstraintLayout>(R.id.layout_error)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
-        shimmer_layout.visibility = View.VISIBLE
+        shimmerLayout.visibility = View.VISIBLE
+        layoutError.visibility = View.GONE
         viewModel.listTrack.observe(viewLifecycleOwner) {
             when (it) {
                 is TrackStateError -> {
-                    shimmer_layout.visibility = View.GONE
+                    shimmerLayout.visibility = View.GONE
                     layoutError.visibility = View.VISIBLE
                 }
                 TrackStateLoading -> {
-                    shimmer_layout.visibility = View.VISIBLE
+                    shimmerLayout.visibility = View.VISIBLE
+                    layoutError.visibility = View.GONE
                 }
                 is TrackStateSuccess -> {
-                    shimmer_layout.visibility = View.GONE
+                    shimmerLayout.visibility = View.GONE
                     recyclerView.adapter = ListAdapterTrack(it.tracks as MutableList<Track>)
                     recyclerView.layoutManager = GridLayoutManager(context, 1)
                 }

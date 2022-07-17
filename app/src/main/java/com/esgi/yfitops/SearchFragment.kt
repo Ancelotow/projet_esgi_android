@@ -47,6 +47,7 @@ class SearchFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
         loaderList.visibility = View.VISIBLE
         recyclerView.visibility = View.GONE
+        layoutError.visibility = View.GONE
         viewModel.search.observe(viewLifecycleOwner) {
             when (it) {
                 is SearchStateError -> {
@@ -56,6 +57,7 @@ class SearchFragment : Fragment() {
                 SearchStateLoading -> {
                     loaderList.visibility = View.VISIBLE
                     recyclerView.visibility = View.GONE
+                    layoutError.visibility = View.GONE
                 }
                 is SearchStateSuccess -> {
                     loaderList.visibility = View.GONE
@@ -156,8 +158,8 @@ class ArtistViewHolder(v: View) : RecyclerView.ViewHolder(v) {
     private val artistName = v.findViewById<TextView>(R.id.artist_name)
 
     fun setItem(item: Artist) {
-        artistName.text = item.artist
-        if(item.thumb.isNotEmpty()) {
+        artistName.text = item.nameArtist
+        if(item.thumb != null && item.thumb!!.isNotEmpty()) {
             Picasso.get().load(item.thumb).into(artistThumb)
         }
     }

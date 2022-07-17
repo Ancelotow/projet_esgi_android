@@ -1,9 +1,11 @@
 package com.esgi.yfitops.models.entities
 
+import android.util.Log
 import com.esgi.yfitops.models.services.ApiConnection
 import com.esgi.yfitops.models.services.ApiService
 import com.google.gson.annotations.SerializedName
 import retrofit2.await
+import java.util.*
 
 class Artist(
 
@@ -11,7 +13,7 @@ class Artist(
     var id: Int,
 
     @SerializedName("strArtist")
-    var artist: String,
+    var nameArtist: String,
 
     @SerializedName("strStyle")
     var style: String,
@@ -62,10 +64,10 @@ class Artist(
     var biographyPL: String,
 
     @SerializedName("strArtistThumb")
-    var thumb: String,
+    var thumb: String?,
 
     @SerializedName("strArtistLogo")
-    var logo: String,
+    var logo: String?,
 
     @SerializedName("strCountry")
     var country: String,
@@ -73,4 +75,12 @@ class Artist(
     @SerializedName("strGenre")
     var genre: String
 
-)
+) {
+
+    fun getDescription(): String {
+        val countryCode = Locale.getDefault().displayLanguage
+        Log.v("COUNTRY CODE :", countryCode)
+        return biographyFR
+    }
+
+}

@@ -6,7 +6,7 @@ import retrofit2.await
 
 class ArtistDetail(
 
-    val artist: Artist,
+    val information: Artist,
     val albums: ListAlbum,
     val topTracks: ListTrack
 
@@ -23,7 +23,7 @@ class ArtistDetail(
             }
             val artistInfo = artist.artists!!.first()
             val listAlbums = ApiConnection.connection().create(ApiService::class.java).getAlbumsFromArtist(idArtist).await()
-            val topTracks = ApiConnection.connection().create(ApiService::class.java).getTopTrackFromArtist(artistInfo.artist).await()
+            val topTracks = ApiConnection.connection().create(ApiService::class.java).getTopTrackFromArtist(artistInfo.nameArtist).await()
             return ArtistDetail(artistInfo, listAlbums, topTracks)
         }
 
