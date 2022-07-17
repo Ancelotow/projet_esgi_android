@@ -23,7 +23,10 @@ class Track(
     var artist: String,
 
     @SerializedName("strTrackThumb")
-    var thumb: String
+    var thumb: String?,
+
+    @SerializedName("strTrackLyrics")
+    var lyrics: String?
 
 ) {
 

@@ -13,6 +13,7 @@
     <color name="green">#4CAF50</color>
     <color name="red">#C51116</color>
     <color name="shimmerColor">#C2C2C2</color>
+    <color name="darken">#74000000</color>
 
     <color name="transparent">#00C2C2C2</color>
 

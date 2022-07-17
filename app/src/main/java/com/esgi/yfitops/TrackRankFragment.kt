@@ -1,5 +1,6 @@
 package com.esgi.yfitops
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -62,7 +63,7 @@ class ListAdapterTrack(val tracks: MutableList<Track>) : RecyclerView.Adapter<Tr
         return TrackViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_rank, parent, false)
-        )
+        ).listen()
     }
 
     override fun onBindViewHolder(holder: TrackViewHolder, position: Int) {
@@ -71,6 +72,16 @@ class ListAdapterTrack(val tracks: MutableList<Track>) : RecyclerView.Adapter<Tr
 
     override fun getItemCount(): Int {
         return tracks.size
+    }
+
+    private fun <ListAdapterTrack : RecyclerView.ViewHolder> ListAdapterTrack.listen(): ListAdapterTrack {
+        itemView.setOnClickListener {
+            val track = tracks[adapterPosition]
+            val intent = Intent(it.context, LyricsActivity::class.java)
+            intent.putExtra("idTrack", track.id)
+            it.context.startActivity(intent)
+        }
+        return this
     }
 
 }

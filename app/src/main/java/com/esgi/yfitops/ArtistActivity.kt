@@ -157,9 +157,9 @@ class ListAdapterTrackArtist(private val tracks: MutableList<Track>) : RecyclerV
     private fun <ListAdapterTrackArtist : RecyclerView.ViewHolder> ListAdapterTrackArtist.listen(): ListAdapterTrackArtist {
         itemView.setOnClickListener {
             val track = tracks[adapterPosition]
-            /*val intent = Intent(it.context, AlbumActivity::class.java)
-            intent.putExtra("idAlbum", album.id)
-            it.context.startActivity(intent)*/
+            val intent = Intent(it.context, LyricsActivity::class.java)
+            intent.putExtra("idTrack", track.id)
+            it.context.startActivity(intent)
         }
         return this
     }
