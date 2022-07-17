@@ -1,16 +1,17 @@
 package com.esgi.yfitops
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,7 @@ import com.esgi.yfitops.models.enums.ESearchType
 import com.esgi.yfitops.models.repositories.*
 import com.esgi.yfitops.viewModel.SearchViewModel
 import com.squareup.picasso.Picasso
+
 
 class SearchFragment : Fragment() {
 
@@ -70,21 +72,17 @@ class SearchFragment : Fragment() {
 class ListAdapterSearch(private val searchResult: MutableList<Any>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
         return if(viewType ==  ESearchType.ALBUM.ordinal) {
-            AlbumViewHolder(
-                LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_album, parent, false)
-            )
+            val view = inflater.inflate(R.layout.item_album, parent, false)
+            AlbumViewHolder(view).listen()
         } else if(viewType ==  ESearchType.ARTIST.ordinal) {
-            ArtistViewHolder(
-                LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_artist, parent, false)
-            )
+            val view = inflater.inflate(R.layout.item_artist, parent, false)
+            ArtistViewHolder(view).listen()
         } else if(viewType ==  ESearchType.HEADER.ordinal) {
-            HeaderViewHolder(
-                LayoutInflater.from(parent.context)
-                    .inflate(R.layout.header_recycle_view, parent, false)
-            )
+            val view = inflater.inflate(R.layout.header_recycle_view, parent, false)
+            HeaderViewHolder(view)
+
         } else {
             throw Error("Unknown type")
         }
@@ -118,6 +116,23 @@ class ListAdapterSearch(private val searchResult: MutableList<Any>) : RecyclerVi
         } else {
             ESearchType.UNKNOWN.ordinal
         }
+    }
+
+    private fun <ListAdapterSearch : RecyclerView.ViewHolder> ListAdapterSearch.listen(): ListAdapterSearch {
+        itemView.setOnClickListener {
+            if(itemViewType ==  ESearchType.ALBUM.ordinal) {
+                val album = searchResult[adapterPosition] as Album
+                val intent = Intent(it.context, AlbumActivity::class.java)
+                intent.putExtra("idAlbum", album.id)
+                it.context.startActivity(intent)
+            } else if(itemViewType ==  ESearchType.ARTIST.ordinal) {
+                val artist = searchResult[adapterPosition] as Artist
+                val intent = Intent(it.context, ArtistActivity::class.java)
+                intent.putExtra("idArtist", artist.id)
+                it.context.startActivity(intent)
+            }
+        }
+        return this
     }
 
 }
