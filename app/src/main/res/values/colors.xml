@@ -14,5 +14,6 @@
     <color name="red">#C51116</color>
     <color name="shimmerColor">#C2C2C2</color>
 
+    <color name="transparent">#00C2C2C2</color>
 
 </resources>

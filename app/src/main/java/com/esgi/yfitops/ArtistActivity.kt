@@ -17,6 +17,9 @@ class ArtistActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_artist)
+
+        val actionBar: ActionBar? = supportActionBar
+        actionBar?.hide()
     }
 
 }

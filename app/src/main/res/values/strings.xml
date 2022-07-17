@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">yfitops</string>
+    <string name="app_name">Yfitops</string>
 
     <!-- Bottom navigation bar -->
     <string name="menu_rank">Classements</string>
@@ -15,6 +15,9 @@
     <string name="search_artists">Artistes</string>
     <string name="search_albums">Albums</string>
     <string name="search_hint">Recherche…</string>
+
+    <!-- Activity: Artiste -->
+    <string name="artist_top_track">Titres les plus appréciés</string>
 
     <!-- Texte -->
     <string name="txt_error">Une erreur est survenue…\nVérifiez votre connexion internet</string>
