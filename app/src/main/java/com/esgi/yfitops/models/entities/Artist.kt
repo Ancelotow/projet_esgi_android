@@ -78,9 +78,21 @@ class Artist(
 ) {
 
     fun getDescription(): String {
-        val countryCode = Locale.getDefault().displayLanguage
-        Log.v("COUNTRY CODE :", countryCode)
-        return biographyFR
+        return when(Locale.getDefault().isO3Language) {
+            "fra" -> biographyFR
+            "ita" -> biographyIT
+            "jpn" -> biographyJP
+            "deu" -> biographyDE
+            "rus" -> biographyRU
+            "spa" -> biographyES
+            "por" -> biographyPT
+            "sme" -> biographySE
+            "nld" -> biographyNL
+            "hun" -> biographyHU
+            "nor" -> biographyNO
+            "pol" -> biographyPL
+            else -> biographyEN
+        }
     }
 
 }

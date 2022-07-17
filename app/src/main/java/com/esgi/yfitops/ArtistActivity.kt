@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.esgi.yfitops.models.entities.Album
 import com.esgi.yfitops.models.entities.ArtistDetail
+import com.esgi.yfitops.models.entities.Track
 import com.esgi.yfitops.models.repositories.*
 import com.esgi.yfitops.viewModel.ArtistViewModel
 import com.google.android.material.button.MaterialButton
@@ -96,6 +97,12 @@ class ArtistActivity : AppCompatActivity() {
             recyclerViewAlbum.layoutManager = GridLayoutManager(this, 1)
         }
 
+        if(artist.topTracks.track != null) {
+            val recyclerViewTrack = findViewById<RecyclerView>(R.id.recyclerview_track)
+            recyclerViewTrack.adapter = ListAdapterTrackArtist(artist.topTracks.track as MutableList<Track>)
+            recyclerViewTrack.layoutManager = GridLayoutManager(this, 1)
+        }
+
     }
 
 }
@@ -130,6 +137,35 @@ class ListAdapterAlbumArtist(private val albums: MutableList<Album>) : RecyclerV
 
 }
 
+class ListAdapterTrackArtist(private val tracks: MutableList<Track>) : RecyclerView.Adapter<TrackArtistViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrackArtistViewHolder {
+        return TrackArtistViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_track, parent, false)
+        ).listen()
+    }
+
+    override fun onBindViewHolder(holder: TrackArtistViewHolder, position: Int) {
+        holder.setItem(tracks[position], position + 1)
+    }
+
+    override fun getItemCount(): Int {
+        return tracks.size
+    }
+
+    private fun <ListAdapterTrackArtist : RecyclerView.ViewHolder> ListAdapterTrackArtist.listen(): ListAdapterTrackArtist {
+        itemView.setOnClickListener {
+            val track = tracks[adapterPosition]
+            /*val intent = Intent(it.context, AlbumActivity::class.java)
+            intent.putExtra("idAlbum", album.id)
+            it.context.startActivity(intent)*/
+        }
+        return this
+    }
+
+}
+
 class AlbumArtistViewHolder(v: View) : RecyclerView.ViewHolder(v) {
 
     private val albumThumb = v.findViewById<ImageView>(R.id.picture_album_logo)
@@ -142,6 +178,17 @@ class AlbumArtistViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         if(item.thumb != null && item.thumb!!.isNotEmpty()) {
             Picasso.get().load(item.thumb).into(albumThumb)
         }
+    }
+}
+
+class TrackArtistViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+
+    private val trackNumber = v.findViewById<TextView>(R.id.number)
+    private val trackTitle = v.findViewById<TextView>(R.id.title_track)
+
+    fun setItem(item: Track, rank: Int) {
+        trackNumber.text = rank.toString()
+        trackTitle.text = item.title
     }
 }
 
