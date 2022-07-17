@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yfitps</string>
+
+    <!-- Bottom navigation bar -->
+    <string name="menu_rank">Classifiche</string>
+    <string name="menu_search">Cercato</string>
+    <string name="menu_favorites">Preferiti</string>
+
+    <!-- Fragment : Ranks -->
+    <string name="rank_tracks">Titoli</string>
+    <string name="rank_albums">Album</string>
+
+    <!-- Fragment : Search -->
+    <string name="search_title">Ricercare</string>
+    <string name="search_artists">artisti</string>
+    <string name="search_albums">Album</string>
+    <string name="search_hint">Cercato…</string>
+
+    <!-- Activity: Artiste -->
+    <string name="artist_top_track">Titoli più popolari</string>
+
+    <!-- Texte -->
+    <string name="txt_error">Qualcosa è andato storto…\nControlla la tua connessione a Internet</string>
+    <string name="txt_lyrics">Testi</string>
+    <string name="txt_no_lyrics">Hmm, non conosciamo il testo di questa traccia.</string>
+    <string name="txt_retry">riprovare</string>
+
+</resources>

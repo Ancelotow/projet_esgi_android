@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yfitops</string>
+
+    <!-- Bottom navigation bar -->
+    <string name="menu_rank">ランキング</string>
+    <string name="menu_search">求めた</string>
+    <string name="menu_favorites">お気に入り</string>
+
+    <!-- Fragment : Ranks -->
+    <string name="rank_tracks">証券</string>
+    <string name="rank_albums">アルバム</string>
+
+    <!-- Fragment : Search -->
+    <string name="search_title">研究するには</string>
+    <string name="search_artists">アーティスト</string>
+    <string name="search_albums">アルバム</string>
+    <string name="search_hint">求めた…</string>
+
+    <!-- Activity: Artiste -->
+    <string name="artist_top_track">最も人気のあるタイトル</string>
+
+    <!-- Texte -->
+    <string name="txt_error">何か問題が発生しました…\nインターネット接続を確認してください</string>
+    <string name="txt_lyrics">歌詞</string>
+    <string name="txt_no_lyrics">うーん、このトラックの歌詞はわかりません。</string>
+    <string name="txt_retry">リトライ</string>
+
+</resources>

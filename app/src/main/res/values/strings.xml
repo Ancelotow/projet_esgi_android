@@ -1,27 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Yfitops</string>
 
     <!-- Bottom navigation bar -->
-    <string name="menu_rank">Classements</string>
-    <string name="menu_search">Recherche</string>
-    <string name="menu_favorites">Favoris</string>
+    <string name="menu_rank">Rankings</string>
+    <string name="menu_search">Sought</string>
+    <string name="menu_favorites">Favorites</string>
 
     <!-- Fragment : Ranks -->
-    <string name="rank_tracks">Titres</string>
+    <string name="rank_tracks">Tracks</string>
     <string name="rank_albums">Albums</string>
 
     <!-- Fragment : Search -->
-    <string name="search_title">Rechercher</string>
-    <string name="search_artists">Artistes</string>
+    <string name="search_title">Research</string>
+    <string name="search_artists">Artists</string>
     <string name="search_albums">Albums</string>
-    <string name="search_hint">Recherche…</string>
+    <string name="search_hint">Sought…</string>
 
     <!-- Activity: Artiste -->
-    <string name="artist_top_track">Titres les plus appréciés</string>
+    <string name="artist_top_track">Most popular tracks</string>
 
     <!-- Texte -->
-    <string name="txt_error">Une erreur est survenue…\nVérifiez votre connexion internet</string>
-    <string name="txt_lyrics">Paroles</string>
-    <string name="txt_no_lyrics">Hum, nous ne connaissons pas les paroles de ce titre.</string>
+    <string name="txt_error">Something went wrong…\nCheck your internet connection</string>
+    <string name="txt_lyrics">Lyrics</string>
+    <string name="txt_no_lyrics">Hmm, we don\'t know the lyrics to this track.</string>
+    <string name="txt_retry">Retry</string>
 
 </resources>

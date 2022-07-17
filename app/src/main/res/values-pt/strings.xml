@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yfitops</string>
+
+    <!-- Bottom navigation bar -->
+    <string name="menu_rank">Classificações</string>
+    <string name="menu_search">Procurado</string>
+    <string name="menu_favorites">Favoritos</string>
+
+    <!-- Fragment : Ranks -->
+    <string name="rank_tracks">Valores mobiliários</string>
+    <string name="rank_albums">Álbuns</string>
+
+    <!-- Fragment : Search -->
+    <string name="search_title">Pesquisar</string>
+    <string name="search_artists">artistas</string>
+    <string name="search_albums">Álbuns</string>
+    <string name="search_hint">Procurado…</string>
+
+    <!-- Activity: Artiste -->
+    <string name="artist_top_track">Títulos mais populares</string>
+
+    <!-- Texte -->
+    <string name="txt_error">Algo deu errado…\nVerifique sua conexão com a Internet</string>
+    <string name="txt_lyrics">Letra da música</string>
+    <string name="txt_no_lyrics">Hmm, não sabemos a letra dessa faixa.</string>
+    <string name="txt_retry">tente novamente</string>
+
+</resources>
