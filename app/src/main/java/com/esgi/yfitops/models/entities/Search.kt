@@ -1,5 +1,7 @@
 package com.esgi.yfitops.models.entities
 
+import android.content.Context
+import com.esgi.yfitops.R
 import com.esgi.yfitops.models.services.ApiConnection
 import com.esgi.yfitops.models.services.ApiService
 import retrofit2.await
@@ -11,11 +13,15 @@ class Search(
 
 ) {
 
-    fun getListResult(): MutableList<Any> {
+    fun getListResult(context: Context): MutableList<Any> {
         val listResult = mutableListOf<Any>()
-        listResult.addAll(resultArtists.artists)
+        if(resultArtists.artists != null) {
+            listResult.add(context.getString(R.string.search_artists))
+            listResult.addAll(resultArtists.artists!!)
+        }
         if(resultAlbums.album != null) {
-            listResult.addAll(resultAlbums.album)
+            listResult.add(context.getString(R.string.search_albums))
+            listResult.addAll(resultAlbums.album!!)
         }
         return listResult
     }

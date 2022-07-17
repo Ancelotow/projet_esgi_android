@@ -14,7 +14,7 @@ class SearchViewModel : ViewModel() {
     val search = _search
 
     init {
-        getSearch("")
+        getSearch("Céline Dion")
     }
 
     fun getSearch(search: String) {

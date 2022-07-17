@@ -47,8 +47,8 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="1dp"
             app:layout_constraintTop_toTopOf="@id/image_album"
+            app:layout_constraintBottom_toTopOf="@id/desc_album"
             app:layout_constraintRight_toLeftOf="@id/picture_right_arrow"
             app:layout_constraintLeft_toRightOf="@id/image_album" />
 
@@ -57,8 +57,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/grey"
-            android:textSize="12sp"
-            android:layout_marginTop="3dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/image_album"
             app:layout_constraintTop_toBottomOf="@id/title_album"
             app:layout_constraintRight_toLeftOf="@id/picture_right_arrow"
             app:layout_constraintLeft_toLeftOf="@id/title_album" />

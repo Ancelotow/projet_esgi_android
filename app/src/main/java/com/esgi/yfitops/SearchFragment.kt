@@ -50,7 +50,7 @@ class SearchFragment : Fragment() {
                 is SearchStateSuccess -> {
                     loaderList.visibility = View.GONE
                     recyclerView.visibility = View.VISIBLE
-                    recyclerView.adapter = ListAdapterSearch(it.search.getListResult())
+                    recyclerView.adapter = ListAdapterSearch(it.search.getListResult(this@SearchFragment.context!!))
                     recyclerView.layoutManager = GridLayoutManager(context, 1)
                 }
             }
@@ -72,6 +72,11 @@ class ListAdapterSearch(private val searchResult: MutableList<Any>) : RecyclerVi
                 LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_artist, parent, false)
             )
+        } else if(viewType ==  ESearchType.HEADER.ordinal) {
+            HeaderViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(R.layout.header_recycle_view, parent, false)
+            )
         } else {
             throw Error("Unknown type")
         }
@@ -85,6 +90,9 @@ class ListAdapterSearch(private val searchResult: MutableList<Any>) : RecyclerVi
         } else if(viewType ==  ESearchType.ARTIST.ordinal) {
             val artist = searchResult[position] as Artist
             (holder as ArtistViewHolder).setItem(artist)
+        } else if(viewType ==  ESearchType.HEADER.ordinal) {
+            val title = searchResult[position] as String
+            (holder as HeaderViewHolder).setItem(title)
         }
     }
 
@@ -97,6 +105,8 @@ class ListAdapterSearch(private val searchResult: MutableList<Any>) : RecyclerVi
             ESearchType.ARTIST.ordinal
         } else if(searchResult[position] is Album) {
             ESearchType.ALBUM.ordinal
+        } else if(searchResult[position] is String) {
+            ESearchType.HEADER.ordinal
         } else {
             ESearchType.UNKNOWN.ordinal
         }
@@ -127,5 +137,14 @@ class ArtistViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         if(item.thumb.isNotEmpty()) {
             Picasso.get().load(item.thumb).into(artistThumb)
         }
+    }
+}
+
+class HeaderViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+
+    private val headerTitle = v.findViewById<TextView>(R.id.title)
+
+    fun setItem(title: String) {
+        headerTitle.text = title
     }
 }

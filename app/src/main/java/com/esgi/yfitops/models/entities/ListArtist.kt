@@ -5,6 +5,6 @@ import com.google.gson.annotations.SerializedName
 data class ListArtist(
 
     @SerializedName("artists")
-    var artists: List<Artist>
+    var artists: List<Artist>?
 
 )

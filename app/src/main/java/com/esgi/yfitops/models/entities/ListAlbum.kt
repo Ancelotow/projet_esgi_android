@@ -5,6 +5,6 @@ import com.google.gson.annotations.SerializedName
 data class ListAlbum(
 
     @SerializedName("album")
-    var album: List<Album>
+    var album: List<Album>?
 
 )
