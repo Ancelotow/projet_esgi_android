@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yfitops</string>
+
+    <!-- Bottom navigation bar -->
+    <string name="menu_rank">Рейтинги</string>
+    <string name="menu_search">Исследовательская работа</string>
+    <string name="menu_favorites">Избранное</string>
+
+    <!-- Fragment : Ranks -->
+    <string name="rank_tracks">Ценные бумаги</string>
+    <string name="rank_albums">Альбомы</string>
+
+    <!-- Fragment : Search -->
+    <string name="search_title">Исследовать</string>
+    <string name="search_artists">Художники</string>
+    <string name="search_albums">Альбомы</string>
+    <string name="search_hint">Исследовательская работа…</string>
+
+    <!-- Activity: Artiste -->
+    <string name="artist_top_track">Самые популярные названия</string>
+
+    <!-- Texte -->
+    <string name="txt_error">Что-то пошло не так…\nПроверьте подключение к Интернету</string>
+    <string name="txt_lyrics">Текст песни</string>
+    <string name="txt_no_lyrics">Хм, мы не знаем слова этого трека.</string>
+    <string name="txt_retry">Попробуйте еще раз</string>
+    <string name="txt_maintenance">Эта страница находится на обслуживании.\nПожалуйста, зайдите позже</string>
+    <string name="txt_music_nb">%s песен</string>
+
+</resources>

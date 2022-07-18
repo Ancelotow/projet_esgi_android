@@ -17,6 +17,9 @@
             android:name=".LyricsActivity"
             android:exported="false" />
         <activity
+            android:name=".AlbumActivityDet"
+            android:exported="false" />
+        <activity
             android:name=".ArtistActivity"
             android:exported="false" />
         <activity

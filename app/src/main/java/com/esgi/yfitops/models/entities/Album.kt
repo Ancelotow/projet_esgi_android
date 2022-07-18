@@ -3,7 +3,6 @@ package com.esgi.yfitops.models.entities
 import com.esgi.yfitops.models.services.ApiConnection
 import com.esgi.yfitops.models.services.ApiService
 import com.google.gson.annotations.SerializedName
-import org.json.JSONObject
 import retrofit2.await
 
 class Album(
@@ -24,7 +23,16 @@ class Album(
     var thumb: String?,
 
     @SerializedName("intYearReleased")
-    var yearReleased: Int
+    var yearReleased: Int,
+
+    @SerializedName("intScore")
+    var score: Int?,
+
+    @SerializedName("intScoreVotes")
+    var scoreVotes: Int?,
+
+    @SerializedName("strDescriptionEN")
+    var descriptionEN: String?,
 
 ) {
 
@@ -35,6 +43,7 @@ class Album(
                 ApiConnection.connection().create(ApiService::class.java).listAlbumsRank().await()
             return rankAlbums.listLoved
         }
+
 
     }
 

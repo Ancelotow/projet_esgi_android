@@ -4,20 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/drawable/bottom_nav_bar_color.xml" value="0.3415" />
-        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/drawable/ic_loved.xml" value="0.2025" />
-        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/drawable/ic_rank.xml" value="0.2025" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/drawable/ic_search.xml" value="0.2705" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/drawable/placeholder_album.xml" value="0.3055" />
-        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_album.xml" value="0.3109375" />
-        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_artist.xml" value="0.5" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_artist.xml" value="0.24592391304347827" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_detail_artist.xml" value="0.24592391304347827" />
-        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_lyrics.xml" value="0.33" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_main.xml" value="0.55" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_main2.xml" value="0.3109375" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/activity_ranking.xml" value="0.36302083333333335" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_album_rank.xml" value="0.346875" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_blank.xml" value="0.55" />
-        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_favorites.xml" value="0.3625" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_rank.xml" value="0.2554347826086957" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_search.xml" value="0.25" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/fragment_track_rank.xml" value="0.346875" />
@@ -27,9 +22,29 @@
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_rank.xml" value="0.24592391304347827" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_rank_shimmer.xml" value="0.18541666666666667" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_titre.xml" value="0.24592391304347827" />
-        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_track.xml" value="0.5" />
+        <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/item_track.xml" value="0.25" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/layout/layout_error.xml" value="0.346875" />
         <entry key="..\:/Projects/projet_esgi_android/app/src/main/res/menu/bottom_nav_bar.xml" value="0.5489583333333333" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/drawable/Etoile_background.xml" value="0.114" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/drawable/ic_etoile.xml" value="0.114" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/drawable/ic_search.xml" value="0.114" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/drawable/placeholder_album.xml" value="0.114" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_album.xml" value="0.22" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_artist.xml" value="0.18" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_favoris.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/activity_main.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/fragment_album_rank.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/fragment_rank.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_album.xml" value="0.1" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_artist.xml" value="0.1" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_rank.xml" value="0.1" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_rank_shimmer.xml" value="0.1" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/item_track.xml" value="0.1" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/layout_error.xml" value="0.21" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/layout/list_item_rank.xml" value="0.10507246376811594" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/menu/bottom_nav_bar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/mipmap-anydpi-v26/Etoile.xml" value="0.114" />
+        <entry key="..\:/Users/gabri/Documents/ESGIecole/TroisiemeAnnee/DeuxiemeSemestre/Android/Examen Android/projet_esgi_android/app/src/main/res/mipmap-anydpi-v26/Etoile_round.xml" value="0.114" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3212962962962963" />
       </map>
     </option>

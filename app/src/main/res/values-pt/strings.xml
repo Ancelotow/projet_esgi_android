@@ -26,5 +26,6 @@
     <string name="txt_no_lyrics">Hmm, não sabemos a letra dessa faixa.</string>
     <string name="txt_retry">tente novamente</string>
     <string name="txt_maintenance">Esta página está em manutenção.\nVolte mais tarde</string>
+    <string name="txt_music_nb">%s músicas</string>
 
 </resources>
