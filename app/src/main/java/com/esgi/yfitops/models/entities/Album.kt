@@ -26,7 +26,7 @@ class Album(
     var yearReleased: Int,
 
     @SerializedName("intScore")
-    var score: Int?,
+    var score: Double?,
 
     @SerializedName("intScoreVotes")
     var scoreVotes: Int?,

@@ -82,9 +82,11 @@ class AlbumActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.album_name).text = album.information.name
 
         val imageAlbum = findViewById<ImageView>(R.id.album_image)
+        val imageDetailAlbum = findViewById<ImageView>(R.id.detail_image)
         val thumbAlbum = album.information.thumb
         if(thumbAlbum != null && thumbAlbum.isNotEmpty()) {
             Picasso.get().load(thumbAlbum).into(imageAlbum)
+            Picasso.get().load(thumbAlbum).into(imageDetailAlbum)
         }
 
 
@@ -101,7 +103,7 @@ class AlbumActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.description).text = description
 
         if(album.tracks.track != null) {
-            val recyclerViewTrack = findViewById<RecyclerView>(R.id.recyclerview_track)
+            val recyclerViewTrack = findViewById<RecyclerView>(R.id.recyclerview_album)
             recyclerViewTrack.adapter = ListAdapterTrackAlbum(album.tracks.track as MutableList<Track>)
             recyclerViewTrack.layoutManager = GridLayoutManager(this, 1)
         }
