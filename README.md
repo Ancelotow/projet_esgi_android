@@ -13,7 +13,7 @@ Cette application a été développé dans le cadre d'un projet de 3ème année 
 # SPÉCIFICATION TECHNIQUE
 
 - IDE: Android Studio
-- Langage: Kotelin
+- Langage: Kotlin
 - API: theaudiodb
 - Outils de versionning: Git
 - Dépôt du code: Github
